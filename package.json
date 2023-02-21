@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase": "^8.10.1",
+    "firebase-admin": "^11.5.0"
+  },
+  "name": "sia-pd-ipm",
+  "version": "1.0.0",
+  "description": "Sistem Informasi Administrasi PD IPM Kota Pekanbaru",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadiid-studentcode/SIA-PD-IPM.git"
+  },
+  "author": "hadiidandriy12",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadiid-studentcode/SIA-PD-IPM/issues"
+  },
+  "homepage": "https://github.com/hadiid-studentcode/SIA-PD-IPM#readme"
+}

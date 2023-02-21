@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <title>Surat Keluar - SIA PD IPM</title>
-    <link rel="icon" href="/assets/img/logo pd ipm final.png" />
+    <link rel="icon" href="assets/img/logo pd ipm final.png" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -24,7 +24,7 @@
         <a class="navbar-brand d-flex align-items-center" href="/"
           ><span>
             <img
-              src="/assets/img/logo pd ipm final.png"
+              src="assets/img/logo pd ipm final.png"
               class="img-fluid"
               alt="logo pd ipm"
               width="50"
@@ -42,13 +42,15 @@
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link " href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="surat-masuk.html">Surat Masuk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="surat-keluar.html">Surat Keluar</a>
+              <a class="nav-link active" href="surat-keluar.html"
+                >Surat Keluar</a
+              >
             </li>
             <li class="nav-item">
               <a
@@ -98,40 +100,164 @@
     </header>
     <section>
       <div class="container py-4 py-xl-5">
-       <button class="btn btn-primary">Tambah Surat Keluar</button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Tambah Surat Keluar
+        </button>
 
-       <div class="table-responsive mt-4">
-        <table class="table table-striped
-        table-hover	
-        table-borderless
-        table-primary
-        align-middle">
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <form action="" class="form" id="form">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Surat Keluar
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="suratno" class="form-label">Surat No *</label>
+                    <input type="text" class="form-control" id="nosurat" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="perihal" class="form-label">Perihal *</label>
+                    <input type="text" class="form-control" id="perihal" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="suratdari" class="form-label"
+                      >Dikirim Ke *</label
+                    >
+                    <input type="text" class="form-control" id="dikirimke" />
+                  </div>
+                  <div class="mb-3">
+                    <div class="row g-2">
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <select class="form-select" id="sifatsurat">
+                            <option selected>Pilih</option>
+                            <option value="penting">Penting</option>
+                            <option value="umum">Umum</option>
+                            <option value="Biasa">Biasa</option>
+                          </select>
+                          <label for="floatingInputGrid">Sifat Surat</label>
+                        </div>
+                      </div>
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <input type="date" class="form-control name=""
+                          id="tanggal">
+                          <label for="floatingSelectGrid">Tanggal Surat</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="row g-2">
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="penerima"
+                          />
+                          <label for="floatingInputGrid">Penerima</label>
+                        </div>
+                      </div>
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <input type="text" class="form-control name=""
+                          id="lampiran">
+                          <label for="floatingSelectGrid">Lampiran</label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="suratdari" class="form-label"
+                          >Keterangan</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="keterangan"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group mb-3">
+                      <input type="file" class="form-control" id="fotosurat" />
+                      <label class="input-group-text" for="inputGroupFile02"
+                        >Upload</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    onclick="createdData()"
+                  >
+                    Simpan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="table-responsive mt-4">
+          <table
+            class="table table-striped table-hover table-borderless table-primary align-middle"
+          >
             <thead class="table-light">
-                <caption>Table Name</caption>
-                <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
-                </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr class="table-primary" >
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                    </tr>
-                    <tr class="table-primary">
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    
-                </tfoot>
-        </table>
-       </div>
-       
+              <caption>
+                Table Name
+              </caption>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr class="table-primary">
+                <td scope="row">Item</td>
+                <td>Item</td>
+                <td>Item</td>
+              </tr>
+              <tr class="table-primary">
+                <td scope="row">Item</td>
+                <td>Item</td>
+                <td>Item</td>
+              </tr>
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
       </div>
     </section>
 

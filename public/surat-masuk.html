@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <title>Surat Masuk - SIA PD IPM</title>
-    <link rel="icon" href="/assets/img/logo pd ipm final.png" />
+    <link rel="icon" href="assets/img/logo pd ipm final.png" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -24,7 +24,7 @@
         <a class="navbar-brand d-flex align-items-center" href="/"
           ><span>
             <img
-              src="/assets/img/logo pd ipm final.png"
+              src="assets/img/logo pd ipm final.png"
               class="img-fluid"
               alt="logo pd ipm"
               width="50"
@@ -186,6 +186,16 @@
                           <label for="floatingSelectGrid">Lampiran</label>
                         </div>
                       </div>
+                        <div class="mb-3">
+                        <label for="suratdari" class="form-label"
+                          >Keterangan</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="keterangan"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div class="mb-3">
@@ -208,7 +218,7 @@
                   <button
                     type="submit"
                     class="btn btn-primary"
-                    onclick="simpansurat()"
+                    onclick="createdData()"
                   >
                     Simpan
                   </button>
@@ -339,6 +349,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/startup-modern.js"></script>
     <script src="script/surat-masuk.js"></script>

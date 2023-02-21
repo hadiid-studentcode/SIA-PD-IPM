@@ -1,62 +1,79 @@
-function simpansurat() {
-  const form = document.getElementById("form");
-  const nosurat = document.getElementById("nosurat");
-  const perihal = document.getElementById("perihal");
-  const suratdari = document.getElementById("suratdari");
-  const sifatsurat = document.getElementById("sifatsurat");
-  const tanggal = document.getElementById("tanggal");
-  const penerima = document.getElementById("penerima");
-  const lampiran = document.getElementById("lampiran");
-  const fotosurat = document.getElementById("fotosurat");
+function createdData() {
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  const form  = document.getElementById('form');
+  const no = document.getElementById("nosurat").value;
+  const perihal = document.getElementById("perihal").value;
 
-    const data = {
-      Jenis : "Masuk",
-      No: nosurat.value,
-      Perihal: perihal.value,
-      Dari: suratdari.value,
-      Sifat: sifatsurat.value,
-      Tanggal: tanggal.value,
-      Penerima: penerima.value,
-      Lampiran: lampiran.value,
-      Foto: fotosurat.value,
-    };
+  const dari = document.getElementById("suratdari").value;
 
-    console.log(data);
+  const sifat = document.getElementById("sifatsurat").value;
 
-    // Add one line to the sheet
-    fetch(
-      "https://sheet.best/api/sheets/d51b5e7f-f88d-4bd5-899c-061f4ac49225",
-      {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    )
-      .then((r) => r.json())
-      .then((data) => {
-        // The response comes here
-        console.log(data);
-      })
-      .catch((error) => {
-        // Errors are reported there
-        console.log(error);
-      });
-  });
+  const tanggal = document.getElementById("tanggal").value;
 
- 
+  const penerima = document.getElementById("penerima").value;
 
- 
+  const lampiran = document.getElementById("lampiran").value;
+
+  const keterangan = document.getElementById('keterangan').value;
+
+  const foto = document.getElementById("fotosurat").value;
+   const fotosurat = foto.substring(12);
+
+  const date = new Date();
 
 
-    return window.location.href = '/surat-masuk.html';
+
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+     fetch("https://sheetdb.io/api/v1/ardrqd97wdth7", {
+       method: "POST",
+       headers: {
+         Accept: "application/json",
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify({
+         data: [
+           {
+             No: no,
+             Perihal: perihal,
+             Dari: dari,
+             Sifat: sifat,
+             Tanggal: tanggal,
+             Penerima: penerima,
+             Lampiran: lampiran,
+             Keterangan: keterangan,
+             Foto: fotosurat,
+             Timestamp: date,
+           },
+         ],
+       }),
+     })
+       .then((response) => response.json())
+       .then((data) => console.log(data));
+
+
+   
+
+    
+
+
+      
+
+   return alert("Surat Masuk Berhasil Ditambahkan !");
+  })
+
+
+  document.location.reload(true);
+  
+
+
 }
 
-const d = new Date();
 
-console.log(d)
+
+
+
+
+
